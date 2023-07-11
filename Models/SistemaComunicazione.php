@@ -12,19 +12,40 @@
         //metodi
         public $invio;
 
-        public function __construct($titolo, $contenuto, $mittente, $destinatario, $invio){
+        function __construct($titolo, $contenuto, $mittente, $destinatario, $invio,){
             $this->titolo = $titolo;
             $this-> contenuto = $contenuto;
             $this-> mittente = $mittente;
             $this-> destinatario = $destinatario;
-            $this-> invio = $invio;
+            $this -> invio = $invio;
         }
-    
-        public function Invio(){
-			return 'Invio effettuato';
+
+        public function getTitolo(){
+            return $this ->titolo;
+        }
+
+        public function getContenuto(){
+            return $this ->contenuto;
+        }
+
+        public function getMittente(){
+            return $this->contenuto;
+        }
+        
+
+        public function setDestinatario(){
+			return $this -> invio;
 		}
 
-  
+        public function getInvio(){
+            if( $this -> invio === true){
+                return 'Invio effettuato';
+            }
+            else{
+                return 'Invio non effettuato';
+            }
+        }
+
 
     }
   

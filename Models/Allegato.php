@@ -1,6 +1,7 @@
 <?php
 
     class Allegato{
+
         private $nome;
         private $dimensione;
         private $contenuto;
@@ -11,10 +12,19 @@
             $this-> contenuto = $contenuto;
         }
 
-        
+        public function getNome(){
+            return $this -> nome;
+        }
+
+        public function getDimensione(){
+            return $this -> dimensione;
+        }
+
+        public function getContenuto(){
+            return $this -> contenuto;
+        }
     }
 
-      
-
+    
 
 ?>
