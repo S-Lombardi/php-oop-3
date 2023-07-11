@@ -7,29 +7,24 @@
         private $contenuto;
         private $mittente;
         private $destinatario;
-        public $suoneria = 'DRRIIINN';
+        public static $suoneria = 'DRRIINN' ;
 
         //metodi
         public $invio;
 
-        public function __construct($titolo, $contenuto, $mittente, $destinatario, $suoneria, $invio){
+        public function __construct($titolo, $contenuto, $mittente, $destinatario, $invio){
             $this->titolo = $titolo;
             $this-> contenuto = $contenuto;
             $this-> mittente = $mittente;
             $this-> destinatario = $destinatario;
-
-            $this -> suoneria = 'DRRIIINN' ;
             $this-> invio = $invio;
         }
     
-        public function getInvio(){
-			$this-> invio;
+        public function Invio(){
+			return 'Invio effettuato';
 		}
 
-
-
-
-    
+  
 
     }
   

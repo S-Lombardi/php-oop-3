@@ -1,10 +1,32 @@
 <?php
     //Recupero i file che contengono le classi
     require_once __DIR__."/Models/SistemaComunicazione.php";
+    require_once __DIR__."/Models/Email.php";
 
-    $sc = new sistemaComunicazione( 'Titolo del testo', 'Contenuto testo blablabla..', 'Sig. Mittente', 'Sig. Destinatario', 'DRRIIINN', 'Invio effettuato');
+    //Istanze di S.Comunicazione
+    $email = new Email( 'Titolo del testo',
+                        'Contenuto testo blablabla..',
+                        'Sig. Mittente', 
+                        'Sig. Destinatario',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                    );
+                   
 
-    var_dump($sc)
+
+
+    
+
+
+
+
+
+                    
+    var_dump($email);
+    var_dump(Email::$suoneria);
 
 ?>
 
