@@ -17,13 +17,22 @@
     
 
 
-    var_dump($allegato);
+    //Istanze della classe Sistemi Comunicazione
+    $email_1 = new Email('Invito alla riunione', 'Ciao tutti, vi scrivo per invitarvi alla riunione di domani alle ore 10 presso la sala conferenze. Ci saranno importanti aggiornamenti sul progetto in corso. A domani!', 'Mario Rossi', 'Tutti i dipendenti', true, false);
+    $allegato_1 = new Allegato ( 'Riunione','12gb','img_grafico.jpg');
+    $email_1 -> setAllegato($allegato_1);
 
-    $email = new Email('Titolo del testo', 'Contenuto testo blablabla..','Sig. Mittente', 'Sig. Destinatario', 'sdsd', 'sdsd');
-    $email -> setAllegato($allegato);
+    $email_2 = new Email('Richiesta di informazioni', 'Buongiorno, avrei bisogno di alcune informazioni riguardo al prodotto X. Potreste gentilmente fornirmi maggiori dettagli? Grazie mille!', 'Paolo Bianchi', 'Servizio clienti', false, true);
+    $allegato_2 = new Allegato ( 'Prodotto','12gb','img_prodotto_x.jpg');
+    $email_2 -> setAllegato($allegato_2);
+  
 
-    var_dump($email);
-
+    $email = [
+        $email_1,
+        $email_2,
+    ];
+    
+    var_dump(SistemaComunicazione :: $suoneria)
 
 ?>
 
@@ -32,9 +41,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <title>PHP OOP 3</title>
     </head>
     <body>
+        <div class="container">
+            <div class="row">
+                <?php  foreach($email as $email) {?>
+
+
+                    <div class="col-4 card">
+                        <h4> Mittente: <?php echo $email -> getMittente() ?></h4>
+                        <h5> Titolo email: <?php echo $email -> getTitolo() ?></h5>
+                        <p> Contenuto: <?php echo $email -> getContenuto() ?></p>
+
+                        <h5> Destinatario: <?php echo $email -> getDestinatario() ?></h5>
+
+
+                        
+                    </div>
+
+                <?php }?>
+            </div>
+        </div>
         
     </body>
 </html>

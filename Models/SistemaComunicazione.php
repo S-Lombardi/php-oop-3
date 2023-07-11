@@ -23,19 +23,20 @@
         public function getTitolo(){
             return $this ->titolo;
         }
-
+        
         public function getContenuto(){
             return $this ->contenuto;
         }
 
         public function getMittente(){
-            return $this->contenuto;
+            return $this-> mittente;
         }
         
-
-        public function setDestinatario(){
-			return $this -> invio;
+        public function getDestinatario(){
+			return $this -> destinatario;
 		}
+
+
 
         public function getInvio(){
             if( $this -> invio === true){

@@ -8,9 +8,9 @@
 
         //proprietà
         private $allegato;
-
         //metodi
         public $inoltro;
+
 
 
         public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $inoltro){
@@ -18,10 +18,10 @@
             $this-> inoltro = $inoltro;
         }
 
+        //incapsulamento della classe Allegato
         public function setAllegato($allegato){
             $this -> allegato = $allegato;
         }
-
         public function getAllegato(){
             return $this-> allegato;
         }
@@ -34,6 +34,17 @@
             else{
                 return 'Invio e-mail non effettuato';
             }
+        }
+
+        
+        public function getInoltro(){
+            if( $this -> inoltro === true){
+                return 'Email inoltrata';
+            }
+            else{
+                return 'Email non inoltrata';
+            }
+
         }
 
 
