@@ -4,18 +4,6 @@
     require_once __DIR__."/Models/Email.php";
     require_once __DIR__."/Models/Allegato.php";
 
-  
-
-    $sc= new SistemaComunicazione ('Titolo del testo',
-    'Contenuto testo blablabla..',
-    'Sig. Mittente', 
-    'Sig. Destinatario', '',
-     true);
-
-    
-
-    
-
 
     //Istanze della classe Sistemi Comunicazione
     $email_1 = new Email('Invito alla riunione', 'Ciao tutti, vi scrivo per invitarvi alla riunione di domani alle ore 10 presso la sala conferenze. Ci saranno importanti aggiornamenti sul progetto in corso. A domani!', 'Mario Rossi', 'Tutti i dipendenti', true, false);
