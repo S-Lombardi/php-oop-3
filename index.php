@@ -1,4 +1,10 @@
 <?php
+    //Recupero i file che contengono le classi
+    require_once __DIR__."/Models/SistemaComunicazione.php";
+
+    $sc = new sistemaComunicazione( 'Titolo del testo', 'Contenuto testo blablabla..', 'Sig. Mittente', 'Sig. Destinatario', 'DRRIIINN', 'Invio effettuato');
+
+    var_dump($sc)
 
 ?>
 
