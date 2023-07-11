@@ -7,7 +7,7 @@
         private $contenuto;
         private $mittente;
         private $destinatario;
-        public static $suoneria = 'DRRIINN' ;
+        public static $suoneria = 'fa-regular fa-bell' ;
 
         //metodi
         public $invio;
