@@ -48,6 +48,7 @@
                 <!-- EMAIL -->
                 <?php  foreach($email as $email) {?>
                     <div class="col-4 card p-4 me-3">
+                        <!-- Info ( SistemaComunicazione) -->
                         <h4>
                              Mittente: <?php echo $email -> getMittente() ?>
                         </h4>
@@ -60,17 +61,19 @@
                         <h5>
                             Destinatario: <?php echo $email -> getDestinatario() ?>
                         </h5>
-                        <!-- Allegato -->
+                        <!-- Allegato  (Email)-->
                         <p>
                             Allegato: <?php echo $email -> getAllegato() -> getNome().' - '; echo $email -> getAllegato() ->getContenuto().' - '; echo $email -> getAllegato() ->getDimensione()  ?>
                         </p>
-                        <!-- Invio -->
+                        <!-- Invio ( SistemaComunicazione)  -->
                         <p class="">
                             <?php echo $email -> getInvio() ?>
                         </p>
-                        <!-- Icona -->
+                        <!-- Suoneria  ( SistemaComunicazione) -->
                         <div class="mt-3 text-center">
-                            <i class="<?php echo SistemaComunicazione :: $suoneria ?>"></i>   
+                            <i class="<?php echo SistemaComunicazione :: $suoneria ?>"></i>  
+                            <!-- Colore led (Email) -->
+                            <?php echo Email:: $colore_led ?>
                         </div>
                     </div>
 
