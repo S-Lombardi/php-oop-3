@@ -29,7 +29,7 @@
         
         
         public function getAccettazioneRisposta(){
-            return $this -> accettazione_risposta;
+            return 'si';
         }
         
         //Polimorfismo su invio

@@ -1,5 +1,5 @@
 <?php
-    //Creo la classe PADRE S.Comunicazioni
+    //Creo la classe padre Sistema Comunicazione
     class SistemaComunicazione{
 
         //proprietà

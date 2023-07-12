@@ -4,7 +4,6 @@
     //creo la classe Email, figlia di SistemaComunicazione
     class Email extends SistemaComunicazione{
 
-        //proprietà 
         private $allegato;
         
         public static $colore_led = 'Green';

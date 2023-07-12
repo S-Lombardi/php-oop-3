@@ -9,26 +9,54 @@
 
     //Istanze della classe Sistemi Comunicazione
     $email_1 = new Email('Invito alla riunione', 
-                            'Ciao tutti, vi scrivo per invitarvi alla riunione di domani alle ore 10 presso la sala conferenze. 
-                            Ci saranno importanti aggiornamenti sul progetto in corso. A domani!', 
-                            'Mario Rossi',
-                            'Tutti i dipendenti', 
-                            true);
+                        'Ciao tutti, vi scrivo per invitarvi alla riunione di domani alle ore 10 presso la sala conferenze. 
+                        Ci saranno importanti aggiornamenti sul progetto in corso. A domani!', 
+                        'Mario Rossi',
+                        'Tutti i dipendenti', 
+                        true);
     $allegato_1 = new Allegato ( 'Riunione','1Mb','img_grafico.jpg');
     $email_1 -> setAllegato($allegato_1);
 
-    $email_2 = new Email('Richiesta di informazioni', 'Buongiorno, avrei bisogno di alcune informazioni riguardo al prodotto X. Potreste gentilmente fornirmi maggiori dettagli? Grazie mille!', 'Paolo Bianchi', 'Servizio clienti', false);
+    $email_2 = new Email('Richiesta di informazioni',
+                        'Buongiorno, avrei bisogno di alcune informazioni riguardo al prodotto X. Potreste gentilmente fornirmi maggiori dettagli? Grazie mille!',
+                        'Paolo Bianchi',
+                        'Servizio clienti',
+                        false);
     $allegato_2 = new Allegato ( 'Prodotto','200Kb','img_prodotto_x.jpg');
     $email_2 -> setAllegato($allegato_2);
 
 
-    $sms_1 = new Sms('Invito al compleanno', 'Ciao!Ricordati di venire alla mia festa, ci vediamo domani!', 'Ginetta', 'Amici', true, ' ok','manca qualcosa');
-    $sms_2 = new Sms('Gita a Siena', 'Visitiamo Siena questo sabato?', 'Maria', 'Paola', false, ' sdsdsda',true);
+    $sms_1 = new Sms('Invito al compleanno',
+                    'Ciao!Ricordati di venire alla mia festa, ci vediamo domani!', 
+                    'Ginetta', 
+                    'Amici', 
+                    true, 
+                    true,
+                    false);
+
+    $sms_2 = new Sms('Gita a Siena',
+                    'Visitiamo Siena questo sabato?',
+                    'Maria', 
+                    'Paola', 
+                    false,
+                    true,
+                    false);
    
-    $notifica_1 = new Notifica('Snapchat',' nuovo messaggio da una chat','Privato','Mario',true,'icona', false);
-    $notifica_2 = new Notifica('WhatsAp',' due nuovi messaggi e una foto','Ciccio','Rita',false,'icona', true);
+    $notifica_1 = new Notifica('Facebook',
+                                'nuovo richiesta di amicizia',
+                                'Privato',
+                                'Mario',
+                                true,
+                                'icona',
+                                false);
+    $notifica_2 = new Notifica('WhatsApp',
+                                'due nuovi messaggi e una foto',
+                                'Ciccio',
+                                'Rita',
+                                false,
+                                'icona', 
+                                true);
     
-  
     //array per mostrare a schermo i dati con un ciclo
     $email = [
         $email_1,
@@ -143,7 +171,7 @@
                     </div>
                 <?php }?>
                 <!-- FINE SMS -->
-                <!-- SMS -->
+                <!-- NOTIFICHE -->
                 <?php  foreach($notifica as $item) {?>
                     <div class="col-4 card p-4 me-3 mb-5">
                         <em class="text-center mb-3">
