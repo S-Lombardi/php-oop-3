@@ -53,8 +53,9 @@
         <title>PHP OOP 3</title>
     </head>
     <body>
+        
         <div class="container p-5">
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- EMAIL -->
                 <?php  foreach($email as $email) {?>
                     <div class="col-4 p-4   card me-3 mb-5">
