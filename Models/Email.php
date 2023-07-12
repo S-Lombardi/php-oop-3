@@ -1,22 +1,22 @@
 <?php
-    //require_once __DIR__."Allegato.php";
-
     include("Allegato.php");
 
     //creo la classe Email, figlia di SistemaComunicazione
     class Email extends SistemaComunicazione{
 
         //proprietà
-        private $allegato;
+        private $allegato;  //Allegato non è n aproprietà obblligatoria, quindi non va nel costruttore
         //metodi
         public $inoltro;
 
 
 
         public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $inoltro){
-            parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario,  $_invio);
+            parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio);
             $this-> inoltro = $inoltro;
         }
+
+
 
         //incapsulamento della classe Allegato
         public function setAllegato($allegato){
@@ -35,16 +35,9 @@
                 return 'Invio e-mail non effettuato';
             }
         }
-
         
-        public function getInoltro(){
-            if( $this -> inoltro === true){
-                return 'Email inoltrata';
-            }
-            else{
-                return 'Email non inoltrata';
-            }
-
+        public function Inoltro(){
+            return 'Email inoltrata';
         }
 
 
