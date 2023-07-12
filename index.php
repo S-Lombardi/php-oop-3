@@ -14,7 +14,7 @@
     $allegato_2 = new Allegato ( 'Prodotto','12gb','img_prodotto_x.jpg');
     $email_2 -> setAllegato($allegato_2);
   
-
+    //array per mostrare a schermo i dati con un ciclo
     $email = [
         $email_1,
         $email_2,
