@@ -11,7 +11,7 @@
 
         public $invio;
 
-        function __construct($titolo, $contenuto, $mittente, $destinatario, $invio,){
+        function __construct($titolo, $contenuto, $mittente, $destinatario, $invio){
             $this->titolo = $titolo;
             $this-> contenuto = $contenuto;
             $this-> mittente = $mittente;
