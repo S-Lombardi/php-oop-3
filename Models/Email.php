@@ -6,6 +6,7 @@
 
         //proprietà
         private $allegato;  //Allegato non è n aproprietà obblligatoria, quindi non va nel costruttore
+        public static $colore_led = 'Green';
         //metodi
         public $inoltro;
 

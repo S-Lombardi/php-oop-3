@@ -3,6 +3,7 @@
     require_once __DIR__."/Models/SistemaComunicazione.php";
     require_once __DIR__."/Models/Email.php";
     require_once __DIR__."/Models/Allegato.php";
+    require_once __DIR__."/Models/Sms.php";
 
 
     //Istanze della classe Sistemi Comunicazione
@@ -13,12 +14,22 @@
     $email_2 = new Email('Richiesta di informazioni', 'Buongiorno, avrei bisogno di alcune informazioni riguardo al prodotto X. Potreste gentilmente fornirmi maggiori dettagli? Grazie mille!', 'Paolo Bianchi', 'Servizio clienti', false, true);
     $allegato_2 = new Allegato ( 'Prodotto','200Kb','img_prodotto_x.jpg');
     $email_2 -> setAllegato($allegato_2);
+
+
+    $sms_1 = new Sms('Invto al compleanno', 'Ciao!Vieni invitato al mio compleanno, ci vediamo domani!', 'Ginnetta', 'Amici', true, true, ' Notifica lettura', 'Accettazione risposta');
+
+
+    //$notifica_push = new Notifica ('Fabrizio', 'Silvia', 'icona', true):
   
     //array per mostrare a schermo i dati con un ciclo
     $email = [
         $email_1,
         $email_2,
     ];
+
+    $sms =[
+        $sms_1,
+    ]
 
 ?>
 
@@ -34,7 +45,7 @@
     <body>
         <div class="container">
             <div class="row">
-                <!-- Email -->
+                <!-- EMAIL -->
                 <?php  foreach($email as $email) {?>
                     <div class="col-4 card p-4 me-3">
                         <h4>
@@ -44,7 +55,7 @@
                              Titolo email: <?php echo $email -> getTitolo() ?>
                         </h5>
                         <p>
-                            Contenuto: <?php echo $email -> getContenuto() ?>
+                            Contenuto email: <?php echo $email -> getContenuto() ?>
                         </p>
                         <h5>
                             Destinatario: <?php echo $email -> getDestinatario() ?>
@@ -64,6 +75,34 @@
                     </div>
 
                 <?php }?>
+                <!-- FINE EMAIL -->
+                <!-- SMS -->
+                <?php  foreach($sms as $item) {?>
+                    <div class="col-4 card p-4 me-3">
+                        <h4>
+                             Mittente: <?php echo $item -> getMittente() ?>
+                        </h4>
+                        <h5>
+                             Titolo SMS: <?php echo $item -> getTitolo() ?>
+                        </h5>
+                        <p>
+                            Contenuto SMS: <?php echo $item -> getContenuto() ?>
+                        </p>
+                        <h5>
+                            Destinatario: <?php echo $item -> getDestinatario() ?>
+                        </h5>
+                        
+                        <!-- Invio -->
+                        <p class="">
+                            <?php echo $item -> getInvio() ?>
+                        </p>
+                        <!-- Icona -->
+                        <div class="mt-3 text-center">
+                            <i class="<?php echo SistemaComunicazione :: $suoneria ?>"></i>   
+                        </div>
+                    </div>
+                <?php }?>
+                <!-- FINE SMS -->
             </div>
         </div>
         

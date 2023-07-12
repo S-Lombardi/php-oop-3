@@ -1,26 +1,38 @@
 <?php
 
     //creo la classe Notifiche, figlia di SistemaComunicazione
-    class Notifiche extends SistemaComunicazione{
+    class Notifica extends SistemaComunicazione{
 
         //proprietà
-        public $icona;
+        private $icona;
+        private $visibile;
 
-        //metodi
-        public $click;
-
-        public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $icona, $click ){
-            parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario,  $_invio);
+        public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $icona, $visibile){
+            parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio);
             $this-> icona = $icona;
-            $this-> click = $click;
+            $this-> click = $visibile;
         }
 
         public function geIcona(){
-            return $this -> notifica_lettura;
+            return $this -> icona;
         }
 
-        public function getClick(){
-            return $this -> click;
+        public function getVisibile(){
+            return $this -> visibile;
         }
+
+
+        //Polimorfismo su invio
+        public function getInvio(){
+            if( $this -> invio === true){
+                return 'Notifica inviata';
+            }
+            else{
+                return 'Notifica non inviata';
+            }
+        }
+
+
+
     }
 ?>
