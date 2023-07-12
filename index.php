@@ -20,8 +20,8 @@
     $sms_1 = new Sms('Invito al compleanno', 'Ciao!Ricordati di venire alla mia festa, ci vediamo domani!', 'Ginetta', 'Amici', true, ' Notifica lettura','ok');
     $sms_2 = new Sms('Gita a Siena', 'Visitiamo Siena questo sabato?', 'Maria', 'Paola', true, ' Notifica lettura','ok');
    
-    $notifica_1 = new Notifica('Snapchat',' nuovo messaggio da una chat','Mittente','Destinatario',true,false, 'icona', 'visibile');
-    $notifica_2 = new Notifica('Snapchat',' nuovo messaggio da una chat','Mittente','Destinatario',true,false, 'icona', 'visibile');
+    $notifica_1 = new Notifica('Snapchat',' nuovo messaggio da una chat','Privato','Mario',true,'icona', false, 'visibile');
+    $notifica_2 = new Notifica('WhatsAp',' due nuovi messaggi e una foto','Ciccio','Rita',false,'icona', true, 'visibile');
     
   
     //array per mostrare a schermo i dati con un ciclo
@@ -57,7 +57,7 @@
             <div class="row">
                 <!-- EMAIL -->
                 <?php  foreach($email as $email) {?>
-                    <div class="col-4 card p-4 me-3">
+                    <div class="col-4 p-4   card me-3 mb-5">
                         <em class="text-center mb-3">
                             EMAIL
                         </em>
@@ -98,7 +98,7 @@
 
                 <!-- SMS -->
                 <?php  foreach($sms as $item) {?>
-                    <div class="col-4 card p-4 me-3">
+                    <div class="col-4 card p-4 me-3 mb-5">
                         <em class="text-center mb-3">
                             SMS
                         </em>
@@ -139,7 +139,7 @@
                 <!-- FINE SMS -->
                 <!-- SMS -->
                 <?php  foreach($notifica as $item) {?>
-                    <div class="col-4 card p-4 me-3">
+                    <div class="col-4 card p-4 me-3 mb-5">
                         <em class="text-center mb-3">
                             NOTIFICHE
                         </em>

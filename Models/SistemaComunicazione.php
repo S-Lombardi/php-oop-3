@@ -22,7 +22,7 @@
         
         //get è obblicatorio perchè le proprieta sono private
 
-        public function setTitolo($titolo){ //setter e getter per ogni propietà percheè le proprprieta sono prvate!!
+        public function setTitolo($titolo){ 
             $this ->titolo = $titolo;
         }
         public function getTitolo(){

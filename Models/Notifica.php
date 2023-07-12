@@ -19,7 +19,12 @@
         }
 
         public function getVisibile(){
-            return $this -> visibile;
+            if( $this -> invio === true){
+                return 'Visibile ';
+            }
+            else{
+                return 'Non visibile';
+            }
         }
 
 
