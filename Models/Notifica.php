@@ -6,14 +6,15 @@
         //proprietà
         private $icona;
         private $visibile;
+        public static $colore_led = 'Yellow';
 
         public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $icona, $visibile){
             parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio);
             $this-> icona = $icona;
-            $this-> click = $visibile;
+            $this-> visibile = $visibile;
         }
 
-        public function geIcona(){
+        public function getIcona(){
             return $this -> icona;
         }
 

@@ -9,7 +9,6 @@
         private $destinatario;
         public static $suoneria = 'fa-regular fa-bell' ;
 
-        //metodi
         public $invio;
 
         function __construct($titolo, $contenuto, $mittente, $destinatario, $invio,){
@@ -43,9 +42,6 @@
 		}
 
 
-
-
-
         //Definizione del metodo invio della classe
         public function getInvio(){
             if( $this -> invio === true){
@@ -55,14 +51,6 @@
                 return 'Invio non effettuato';
             }
         }
-
-
-        //Fabri ha scritto così per l'invio
-        public function invio(){
-            return 'Invio effettuato';
-
-        }
-
 
     }
   

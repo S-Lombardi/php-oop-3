@@ -4,20 +4,15 @@
     //creo la classe Email, figlia di SistemaComunicazione
     class Email extends SistemaComunicazione{
 
-        //proprietà
-        private $allegato;  //Allegato non è n aproprietà obblligatoria, quindi non va nel costruttore
+        //proprietà 
+        private $allegato;
+        
         public static $colore_led = 'Green';
-        //metodi
-        public $inoltro;
-
-
-
-        public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio, $inoltro){
+        
+        public function __construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio){
             parent::__construct($_titolo, $_contenuto, $_mittente, $_destinatario, $_invio);
-            $this-> inoltro = $inoltro;
+
         }
-
-
 
         //incapsulamento della classe Allegato
         public function setAllegato($allegato){
@@ -37,7 +32,7 @@
             }
         }
         
-        public function Inoltro(){
+        public function getInoltro(){
             return 'Email inoltrata';
         }
 
